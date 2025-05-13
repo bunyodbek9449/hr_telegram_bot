@@ -565,9 +565,9 @@ async def save_bio(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await update.message.reply_text(
         {
-            "en": "📅 Now enter your birth date (e.g. 1995-08-15):",
-            "uz": "📅 Tug‘ilgan sanangizni kiriting (masalan: 1995-08-15):",
-            "ru": "📅 Введите вашу дату рождения (например: 1995-08-15):"
+            "en": "📅 Now enter your birth date (e.g. 02.01.1998):",
+            "uz": "📅 Tug‘ilgan sanangizni kiriting (masalan: 02.01.1998):",
+            "ru": "📅 Введите вашу дату рождения (например: 02.01.1998):"
         }[lang]
     )
     return Form.BIRTH_DATE
@@ -579,12 +579,12 @@ async def save_birth_date(update: Update, context: ContextTypes.DEFAULT_TYPE):
     lang = context.user_data.get("lang", "en")
     birth_date = update.message.text.strip()
 
-    if not re.match(r"\d{4}-\d{2}-\d{2}", birth_date):
+    if not re.match(r"\d{2}.\d{2}.\d{4}", birth_date):
         await update.message.reply_text(
             {
-                "en": "❗ Invalid format. Please enter as YYYY-MM-DD.",
-                "uz": "❗ Noto‘g‘ri format. Iltimos, YYYY-MM-DD shaklida kiriting.",
-                "ru": "❗ Неверный формат. Введите в формате ГГГГ-ММ-ДД."
+                "en": "❗ Invalid format. Please enter as DD.MM.YYYY.",
+                "uz": "❗ Noto‘g‘ri format. Iltimos, DD.MM.YYYY shaklida kiriting.",
+                "ru": "❗ Неверный формат. Введите в формате ДД.ММ.ГГГГ."
             }[lang]
         )
         return Form.BIRTH_DATE
