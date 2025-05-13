@@ -1,0 +1,200 @@
+{
+    "Tashkent": {
+        "Main Office Tashkent": [
+            {
+                "en": "Consultant",
+                "uz": "Konsultant",
+                "ru": "Консультант"
+            },
+            {
+                "en": "Cashier",
+                "uz": "Kassir",
+                "ru": "Кассир"
+            },
+            {
+                "en": "Accountant",
+                "uz": "Hisobchi",
+                "ru": "Бухгалтер"
+            },
+            {
+                "en": "SMM Specialist",
+                "uz": "SMM",
+                "ru": "СММ-специалист"
+            },
+            {
+                "en": "Marketer",
+                "uz": "Marketolog",
+                "ru": "Маркетолог"
+            },
+            {
+                "en": "Financial Specialist",
+                "uz": "Moliyachi",
+                "ru": "Финансист"
+            }
+        ],
+        "Yunusabad Branch": [
+            {
+                "en": "Consultant",
+                "uz": "Konsultant",
+                "ru": "Консультант"
+            },
+            {
+                "en": "Cashier",
+                "uz": "Kassir",
+                "ru": "Кассир"
+            },
+            {
+                "en": "Accountant",
+                "uz": "Hisobchi",
+                "ru": "Бухгалтер"
+            },
+            {
+                "en": "SMM Specialist",
+                "uz": "SMM",
+                "ru": "СММ-специалист"
+            },
+            {
+                "en": "Marketer",
+                "uz": "Marketolog",
+                "ru": "Маркетолог"
+            },
+            {
+                "en": "Financial Specialist",
+                "uz": "Moliyachi",
+                "ru": "Финансист"
+            }
+        ]
+    },
+    "Samarkand": {
+        "Samarkand HR Branch": [
+            {
+                "en": "Consultant",
+                "uz": "Konsultant",
+                "ru": "Консультант"
+            },
+            {
+                "en": "Cashier",
+                "uz": "Kassir",
+                "ru": "Кассир"
+            },
+            {
+                "en": "Accountant",
+                "uz": "Hisobchi",
+                "ru": "Бухгалтер"
+            },
+            {
+                "en": "SMM Specialist",
+                "uz": "SMM",
+                "ru": "СММ-специалист"
+            },
+            {
+                "en": "Marketer",
+                "uz": "Marketolog",
+                "ru": "Маркетолог"
+            },
+            {
+                "en": "Financial Specialist",
+                "uz": "Moliyachi",
+                "ru": "Финансист"
+            }
+        ],
+        "University Campus Branch": [
+            {
+                "en": "Consultant",
+                "uz": "Konsultant",
+                "ru": "Консультант"
+            },
+            {
+                "en": "Cashier",
+                "uz": "Kassir",
+                "ru": "Кассир"
+            },
+            {
+                "en": "Accountant",
+                "uz": "Hisobchi",
+                "ru": "Бухгалтер"
+            },
+            {
+                "en": "SMM Specialist",
+                "uz": "SMM",
+                "ru": "СММ-специалист"
+            },
+            {
+                "en": "Marketer",
+                "uz": "Marketolog",
+                "ru": "Маркетолог"
+            },
+            {
+                "en": "Financial Specialist",
+                "uz": "Moliyachi",
+                "ru": "Финансист"
+            }
+        ]
+    },
+    "Bukhara": {
+        "Bukhara HR Branch": [
+            {
+                "en": "Consultant",
+                "uz": "Konsultant",
+                "ru": "Консультант"
+            },
+            {
+                "en": "Cashier",
+                "uz": "Kassir",
+                "ru": "Кассир"
+            },
+            {
+                "en": "Accountant",
+                "uz": "Hisobchi",
+                "ru": "Бухгалтер"
+            },
+            {
+                "en": "SMM Specialist",
+                "uz": "SMM",
+                "ru": "СММ-специалист"
+            },
+            {
+                "en": "Marketer",
+                "uz": "Marketolog",
+                "ru": "Маркетолог"
+            },
+            {
+                "en": "Financial Specialist",
+                "uz": "Moliyachi",
+                "ru": "Финансист"
+            }
+        ],
+        "University Campus Branch": [
+            {
+                "en": "Consultant",
+                "uz": "Konsultant",
+                "ru": "Консультант"
+            },
+            {
+                "en": "Cashier",
+                "uz": "Kassir",
+                "ru": "Кассир"
+            },
+            {
+                "en": "Accountant",
+                "uz": "Hisobchi",
+                "ru": "Бухгалтер"
+            },
+            {
+                "en": "SMM Specialist",
+                "uz": "SMM",
+                "ru": "СММ-специалист"
+            },
+            {
+                "en": "Marketer",
+                "uz": "Marketolog",
+                "ru": "Маркетолог"
+            },
+            {
+                "en": "Financial Specialist",
+                "uz": "Moliyachi",
+                "ru": "Финансист"
+            }
+        ]
+    }
+}
