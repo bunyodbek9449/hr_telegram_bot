@@ -4,7 +4,6 @@ from telegram.ext import ContextTypes, ConversationHandler
 from states import Form
 from handlers.admin_handler import REGION_BRANCHES
 from utils.vacancy_manager import get_vacancies
-from data import LANGUAGES  # предположительно, у вас тут хранятся LANGUAGES
 
 FIELD_LABELS = {
     "name": {"en": "Name", "uz": "Ism", "ru": "Имя"},
@@ -149,19 +148,10 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [InlineKeyboardButton(text, callback_data=f"lang_{code}")]
         for code, text in LANGUAGES.items()
     ]
-    reply_markup = InlineKeyboardMarkup(keyboard)
-
-    if update.message:
-        await update.message.reply_text(
-            "Please select your language / Iltimos tilni tanlang / Пожалуйста, выберите язык:",
-            reply_markup=reply_markup
-        )
-    elif update.callback_query:
-        await update.callback_query.message.reply_text(
-            "Please select your language / Iltimos tilni tanlang / Пожалуйста, выберите язык:",
-            reply_markup=reply_markup
-        )
-
+    await update.message.reply_text(
+        "Please select your language / Iltimos tilni tanlang / Пожалуйста, выберите язык:",
+        reply_markup=InlineKeyboardMarkup(keyboard)
+    )
     return Form.LANGUAGE
 
 
@@ -214,9 +204,9 @@ async def handle_main_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
         }
 
     }
-    #"about": "https://havepakken.dk/cdn/shop/products/Untitled.png",
+
     images = {
-        "about": "https://drive.google.com/file/d/1ZL0gkRriiG1ZIl_aQ6_78QauKksshOHa/view?usp=drivesdk",
+        "about": "https://havepakken.dk/cdn/shop/products/Untitled.png",
         "branches": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png",
         "contacts": "https://gilb.com.np/wp-content/uploads/2024/02/Contact-us.jpg"
     }
@@ -575,9 +565,9 @@ async def save_bio(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await update.message.reply_text(
         {
-            "en": "📅 Now enter your birth date (e.g. 02.01.1998):",
-            "uz": "📅 Tug‘ilgan sanangizni kiriting (masalan: 02.01.1998):",
-            "ru": "📅 Введите вашу дату рождения (например: 02.01.1998):"
+            "en": "📅 Now enter your birth date (e.g. 1995-08-15):",
+            "uz": "📅 Tug‘ilgan sanangizni kiriting (masalan: 1995-08-15):",
+            "ru": "📅 Введите вашу дату рождения (например: 1995-08-15):"
         }[lang]
     )
     return Form.BIRTH_DATE
@@ -589,12 +579,12 @@ async def save_birth_date(update: Update, context: ContextTypes.DEFAULT_TYPE):
     lang = context.user_data.get("lang", "en")
     birth_date = update.message.text.strip()
 
-    if not re.match(r"\d{2}.\d{2}.\d{4}", birth_date):
+    if not re.match(r"\d{4}-\d{2}-\d{2}", birth_date):
         await update.message.reply_text(
             {
-                "en": "❗ Invalid format. Please enter as DD.MM.YYYY.",
-                "uz": "❗ Noto‘g‘ri format. Iltimos, DD.MM.YYYY shaklida kiriting.",
-                "ru": "❗ Неверный формат. Введите в формате ДД.ММ.ГГГГ."
+                "en": "❗ Invalid format. Please enter as YYYY-MM-DD.",
+                "uz": "❗ Noto‘g‘ri format. Iltimos, YYYY-MM-DD shaklida kiriting.",
+                "ru": "❗ Неверный формат. Введите в формате ГГГГ-ММ-ДД."
             }[lang]
         )
         return Form.BIRTH_DATE
