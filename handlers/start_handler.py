@@ -4,6 +4,7 @@ from telegram.ext import ContextTypes, ConversationHandler
 from states import Form
 from handlers.admin_handler import REGION_BRANCHES
 from utils.vacancy_manager import get_vacancies
+from data import LANGUAGES  # предположительно, у вас тут хранятся LANGUAGES
 
 FIELD_LABELS = {
     "name": {"en": "Name", "uz": "Ism", "ru": "Имя"},
@@ -148,10 +149,19 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [InlineKeyboardButton(text, callback_data=f"lang_{code}")]
         for code, text in LANGUAGES.items()
     ]
-    await update.message.reply_text(
-        "Please select your language / Iltimos tilni tanlang / Пожалуйста, выберите язык:",
-        reply_markup=InlineKeyboardMarkup(keyboard)
-    )
+    reply_markup = InlineKeyboardMarkup(keyboard)
+
+    if update.message:
+        await update.message.reply_text(
+            "Please select your language / Iltimos tilni tanlang / Пожалуйста, выберите язык:",
+            reply_markup=reply_markup
+        )
+    elif update.callback_query:
+        await update.callback_query.message.reply_text(
+            "Please select your language / Iltimos tilni tanlang / Пожалуйста, выберите язык:",
+            reply_markup=reply_markup
+        )
+
     return Form.LANGUAGE
 
 

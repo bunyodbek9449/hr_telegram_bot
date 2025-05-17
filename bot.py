@@ -102,13 +102,13 @@ def main():
     application.add_handler(CommandHandler("listvacancies", list_vacancies_command))
     application.add_handler(CommandHandler("delvacancy", del_vacancy_command))
 
-
-    PORT = int(os.environ.get("PORT", 8443))
     application.run_webhook(
         listen="0.0.0.0",
-        port=PORT,
-        webhook_url=f"https://hr-telegram-bot.onrender.com/{BOT_TOKEN}"  # замените на свой URL
+        port=8000,
+        webhook_url=f"https://hr-telegram-bot.onrender.com/{BOT_TOKEN}",
+        url_path=BOT_TOKEN  # ← ЭТО ОБЯЗАТЕЛЬНО!
     )
+
 
 if __name__ == "__main__":
     main()
