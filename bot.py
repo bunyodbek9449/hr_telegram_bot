@@ -110,7 +110,8 @@ def main():
     application.run_webhook(
         listen="0.0.0.0",
         port=PORT,
-        webhook_url=f"https://hr-telegram-bot.onrender.com/{BOT_TOKEN}"  # замените на свой URL
+        webhook_url=f"https://hr-telegram-bot.onrender.com/{BOT_TOKEN}",
+        path=f"/{BOT_TOKEN}",
     )
 
 if __name__ == "__main__":
