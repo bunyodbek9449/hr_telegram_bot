@@ -204,9 +204,9 @@ async def handle_main_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
         }
 
     }
-
+    #"about": "https://havepakken.dk/cdn/shop/products/Untitled.png",
     images = {
-        "about": "https://havepakken.dk/cdn/shop/products/Untitled.png",
+        "about": "https://drive.google.com/file/d/1ZL0gkRriiG1ZIl_aQ6_78QauKksshOHa/view?usp=drivesdk",
         "branches": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png",
         "contacts": "https://gilb.com.np/wp-content/uploads/2024/02/Contact-us.jpg"
     }
