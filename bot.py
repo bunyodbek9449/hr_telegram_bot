@@ -1,4 +1,5 @@
 import logging
+import os
 from telegram.ext import (
     Application,
     CommandHandler,
@@ -101,6 +102,8 @@ def main():
     application.add_handler(CommandHandler("listvacancies", list_vacancies_command))
     application.add_handler(CommandHandler("delvacancy", del_vacancy_command))
 
+
+    PORT = int(os.environ.get("PORT", 8443))
     application.run_webhook(
         listen="0.0.0.0",
         port=PORT,
