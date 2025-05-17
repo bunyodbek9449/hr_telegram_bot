@@ -1,5 +1,4 @@
 import logging
-import os
 from telegram.ext import (
     Application,
     CommandHandler,
@@ -102,13 +101,7 @@ def main():
     application.add_handler(CommandHandler("listvacancies", list_vacancies_command))
     application.add_handler(CommandHandler("delvacancy", del_vacancy_command))
 
-    application.run_webhook(
-        listen="0.0.0.0",
-        port=8000,
-        webhook_url=f"https://hr-telegram-bot.onrender.com/{BOT_TOKEN}",
-        url_path=BOT_TOKEN  # ← ЭТО ОБЯЗАТЕЛЬНО!
-    )
-
+    application.run_polling()
 
 if __name__ == "__main__":
     main()
